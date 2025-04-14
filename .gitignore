@@ -16,3 +16,41 @@ bin-release/
 # Project files, i.e. `.project`, `.actionScriptProperties` and `.flexProperties`
 # should NOT be excluded as they contain compiler settings and other important
 # information for Eclipse / Flash Builder.
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Ride Sharing App</title>
+</head>
+<body>
+    <h1>Welcome to the Ride Sharing App</h1>
+    <label>Pick-up Location: <input type="text" id="pickupLocation" /></label><br><br>
+    <label>Drop-off Location: <input type="text" id="dropoffLocation" /></label><br><br>
+    <button onclick="requestRide()">Request Ride</button>
+    <div id="rideStatus"></div>
+
+    <script>
+        function requestRide() {
+            var pickup = document.getElementById('pickupLocation').value;
+            var dropoff = document.getElementById('dropoffLocation').value;
+            document.getElementById('rideStatus').innerText = 'Finding a ride...';
+
+            // In a real app, you'd send this data to your backend service
+            // For example using fetch API
+            // fetch('/api/requestRide', {
+            //     method: 'POST',
+            //     body: JSON.stringify({ pickup: pickup, dropoff: dropoff }),
+            //     headers: { 'Content-Type': 'application/json' }
+            // })
+            // .then(response => response.json())
+            // .then(data => {
+            //     document.getElementById('rideStatus').innerText = data.message;
+            // });
+
+            // Simulate a response for now
+            setTimeout(() => {
+                document.getElementById('rideStatus').innerText = 'Ride found! Driver is on the way.';
+            }, 3000);
+        }
+    </script>
+</body>
+</html>
