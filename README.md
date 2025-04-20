@@ -1,3 +1,3 @@
 # RideMyWayapp
-Ride
+RideShareapp
 drive 
